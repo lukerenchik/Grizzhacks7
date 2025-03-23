@@ -1,6 +1,6 @@
-# 🚀 JetpackRL: Reinforcement Learning Jetpack Joyride Clone
+# 🚀 Captain Cwack: A Reinforcement Learning Agent
 
-JetpackRL is a duck themed procedurally generated infinite runner game inspired by *Jetpack Joyride* and *Flappy Bird*. Built with Pygame and Gym, this project allows both humans and reinforcement learning agents to play and compete. The goal: avoid crashing into obstacles, floor, or ceiling while surviving as long as possible.
+Captain Cwack is a duck themed procedurally generated infinite runner game inspired by *Jetpack Joyride* and *Flappy Bird*. Built with Pygame and Gym, this project allows both humans and reinforcement learning agents to play and compete. The goal: avoid crashing into obstacles, floor, or ceiling while surviving as long as possible.
 
 Trained using **Stable Baselines3 (PPO)** with a custom **Gymnasium environment**, the AI learns how to time its thrusts to stay alive in an increasingly difficult environment.
 

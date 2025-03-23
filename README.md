@@ -53,20 +53,20 @@ Trained using **Stable Baselines3 (PPO)** with a custom **Gymnasium environment*
 ## 🏁 Results
 
 ### 📈 Average Reward
-![Average Reward](saves/average_reward.png)
+![Average Reward](jetpack_rl/saves/average_reward.png)
 The agent successfully learns to navigate the environment, reaching high scores reliably after ~X episodes.
 
 ### 📈 Episode Length
-![Episode Length](saves/episode_length_curve.png)
+![Episode Length](jetpack_rl/saves/episode_length_curve.png)
 
 ### 📈 Reward Curve
-![Reward Curve](saves/reward_curve_lowgv.png)
+![Reward Curve](jetpack_rl/saves/reward_curve_lowgv.png)
 
 
 ### 🤖 AI vs Human Scores
 - Best AI Score: `3500`
 - Best Human Score: `2000`
-![leaderboard](assets/leaderboard.png)
+![leaderboard](jetpack_rl/assets/leaderboard.png)
 
 ---
 
@@ -91,15 +91,6 @@ python3 -m scripts.train
 ```bash
 python3 -m scripts.evaluate
 ```
-
-### 📂 Project Structure
-
-jetpack_rl/
-├── envs/                  # Game logic, Gym wrapper
-├── core/                  # Procedural gen, leaderboard, config
-├── scripts/               # Train, play, evaluate, plot
-├── saves/                 # Trained models, leaderboard, plots
-├── logs/                  # Training logs and Monitor outputs
 
 ### 🚀 Next Steps
 

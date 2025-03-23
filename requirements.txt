@@ -1,0 +1,8 @@
+# requirements.txt
+pygame
+gym
+numpy
+stable-baselines3
+matplotlib
+pandas
+pytest

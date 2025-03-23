@@ -1,0 +1,7 @@
+jetpack_rl/core/__pycache__
+jetpack_rl/scripts/__pycache__
+jetpack_rl/tests/__pycache__
+jetpack_rl/envs/__pycache__
+jetpack_rl/saves/plots
+jetpack_rl/saves/models
+jetpack_rl/logs

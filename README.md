@@ -71,7 +71,7 @@ pip install -r requirements.txt
 ```
 
 ### 🕹️ Play as Human
-python scripts/play_human.py
+python -m scripts.play_human
 
 ### 🤖 Train Agent
 python scripts/train.py

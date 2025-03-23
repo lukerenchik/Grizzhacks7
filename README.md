@@ -13,6 +13,8 @@ Trained using **Stable Baselines3 (PPO)** with a custom **Gymnasium environment*
 - Crash = game over
 - Score = time survived (1 point per frame)
 
+![Demo](jetpack_rl/assets/demo.png)
+
 ---
 
 

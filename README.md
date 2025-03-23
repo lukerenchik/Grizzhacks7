@@ -53,19 +53,20 @@ Trained using **Stable Baselines3 (PPO)** with a custom **Gymnasium environment*
 ## 🏁 Results
 
 ### 📈 Average Reward
-![Average Reward](jetpack_rl/saves/average_reward.png)
+![Average Reward](jetpack_rl/saves/plots/average_reward.png)
 The agent successfully learns to navigate the environment, reaching high scores reliably after ~X episodes.
 
 ### 📈 Episode Length
-![Episode Length](jetpack_rl/saves/episode_length_curve.png)
+![Episode Length](jetpack_rl/saves/plots/episode_length_curve.png)
 
 ### 📈 Reward Curve
-![Reward Curve](jetpack_rl/saves/reward_curve_lowgv.png)
+![Reward Curve](jetpack_rl/saves/plots/reward_curve_lowgv.png)
 
 
 ### 🤖 AI vs Human Scores
 - Best AI Score: `3500`
 - Best Human Score: `2000`
+
 ![leaderboard](jetpack_rl/assets/leaderboard.png)
 
 ---

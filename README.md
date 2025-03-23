@@ -45,7 +45,6 @@ Trained using **Stable Baselines3 (PPO)** with a custom **Gymnasium environment*
 **Reward Structure:**
 - `+1` per frame survived
 - `-100` on collision with obstacle, floor, or ceiling
-- Max episode length: 2000 frames
 
 ---
 
@@ -54,7 +53,6 @@ Trained using **Stable Baselines3 (PPO)** with a custom **Gymnasium environment*
 
 ### 📈 Average Reward
 ![Average Reward](jetpack_rl/saves/plots/average_reward.png)
-The agent successfully learns to navigate the environment, reaching high scores reliably after ~X episodes.
 
 ### 📈 Episode Length
 ![Episode Length](jetpack_rl/saves/plots/episode_length_curve.png)

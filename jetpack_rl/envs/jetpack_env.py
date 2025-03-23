@@ -41,6 +41,11 @@ class JetpackEnv:
         # Reset the velocity log for the new episode.
         #self.velocity_log = []
 
+        # Load the background image (assumes bg.png is in the assets folder).
+        self.background = pygame.image.load("assets/bg2.png").convert()
+        # Optionally scale the background to SCREEN_WIDTH and SCREEN_HEIGHT.
+        self.background = pygame.transform.scale(self.background, (SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.bg_x = 0
         
 
     def reset(self):
@@ -102,6 +107,14 @@ class JetpackEnv:
         # Update obstacles: move each obstacle left by calling its update_position method.
         for obs in self.obstacles:
             obs.update_position()
+
+            # Check if any obstacles have been passed (and haven't been rewarded yet).
+        bonus_reward = 0
+        # We assume the player's x position is fixed (e.g., at 100).
+        for obs in self.obstacles:
+            if not obs.passed and (obs.x + OBSTACLE_WIDTH) < self.player.x:
+                #bonus_reward += 15
+                obs.passed = True  # Mark as passed so we don't add reward again.
         
         # Remove obstacles that have scrolled completely off-screen.
         self.obstacles = [obs for obs in self.obstacles if (obs.x + obs.top_rect.width) > 0]
@@ -134,7 +147,10 @@ class JetpackEnv:
         # Here, we assume that if a collision occurs (self.done is True), the state dictionary includes a collision flag.
         from core import game_logic
         state_info = {"collision": self.done}
-        reward = game_logic.compute_reward(state_info, action)
+        base_reward = game_logic.compute_reward(state_info, action)
+
+        # Add bonus reward for passed obstacles.
+        reward = base_reward + bonus_reward
         
         # Get the current observation state.
         observation = self.get_state()

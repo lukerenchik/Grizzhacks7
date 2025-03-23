@@ -104,7 +104,9 @@ class Obstacle:
         self.top_rect = pygame.Rect(self.x, 0, OBSTACLE_WIDTH, self.gap_y)
         # The bottom barrier extends from gap_y + gap_height to the bottom of the screen.
         self.bottom_rect = pygame.Rect(self.x, self.gap_y + self.gap_height, OBSTACLE_WIDTH, SCREEN_HEIGHT - (self.gap_y + self.gap_height))
-    
+        self.passed = False
+
+
     def update_position(self, delta_x=SCROLL_SPEED):
         """
         Update the obstacle's x position to simulate scrolling.
@@ -121,14 +123,21 @@ class Obstacle:
     
     def draw(self, screen):
         """
-        Draw the obstacle on the screen.
-        
-        This method draws both the top and bottom barriers.
+        Draw the obstacle on the screen with a colored fill and a border.
         """
-        # Draw the top barrier (stalactite)
-        pygame.draw.rect(screen, (0, 255, 0), self.top_rect)
-        # Draw the bottom barrier (stalagmite)
-        pygame.draw.rect(screen, (0, 255, 0), self.bottom_rect)
+        # Define your colors.
+        fill_color = (255, 0, 0)       # Red fill.
+        border_color = (0, 0, 0)       # Black border.
+        border_width = 3             # Border thickness.
+
+        # Draw the top barrier: fill first, then draw the border.
+        pygame.draw.rect(screen, fill_color, self.top_rect)
+        pygame.draw.rect(screen, border_color, self.top_rect, border_width)
+
+        # Draw the bottom barrier: fill first, then draw the border.
+        pygame.draw.rect(screen, fill_color, self.bottom_rect)
+        pygame.draw.rect(screen, border_color, self.bottom_rect, border_width)
+
     
     def get_gap_rect(self):
         """

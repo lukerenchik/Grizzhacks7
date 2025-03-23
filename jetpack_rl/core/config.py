@@ -8,8 +8,8 @@ SCREEN_HEIGHT = 768
 PLAYER_WIDTH = 30
 PLAYER_HEIGHT = 30
 # Gravity and thrust affect the player's vertical movement
-GRAVITY = 0.5
-THRUST = -1.2
+GRAVITY = 0.4
+THRUST = -1.0
 
 # Obstacle settings
 OBSTACLE_WIDTH = 50

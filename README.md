@@ -1,8 +1,8 @@
 # 🚀 JetpackRL: Reinforcement Learning Jetpack Joyride Clone
 
-JetpackRL is a procedurally generated infinite runner game inspired by *Jetpack Joyride*. Built with Pygame and Gym, this project allows both humans and reinforcement learning agents to play and compete. The goal: avoid crashing into obstacles, floor, or ceiling while surviving as long as possible.
+JetpackRL is a duck themed procedurally generated infinite runner game inspired by *Jetpack Joyride* and *Flappy Bird*. Built with Pygame and Gym, this project allows both humans and reinforcement learning agents to play and compete. The goal: avoid crashing into obstacles, floor, or ceiling while surviving as long as possible.
 
-Trained using **Stable Baselines3 (PPO)** with a custom **Gym environment**, the AI learns how to time its thrusts to stay alive in an increasingly difficult environment.
+Trained using **Stable Baselines3 (PPO)** with a custom **Gymnasium environment**, the AI learns how to time its thrusts to stay alive in an increasingly difficult environment.
 
 ---
 
@@ -19,7 +19,7 @@ Trained using **Stable Baselines3 (PPO)** with a custom **Gym environment**, the
 ## 📊 Features
 
 - ✅ Procedural level generation
-- ✅ Pygame environment wrapped as a Gym interface
+- ✅ Pygame environment wrapped as a Gymnasium interface
 - ✅ Human play mode with keyboard control
 - ✅ Leaderboard system with top scores
 - ✅ PPO-trained RL agent using Stable Baselines3
@@ -52,14 +52,21 @@ Trained using **Stable Baselines3 (PPO)** with a custom **Gym environment**, the
 
 ## 🏁 Results
 
-### 📈 Reward Curve
-*(Insert reward_curve.png here)*  
+### 📈 Average Reward
+![Average Reward](saves/average_reward.png)
 The agent successfully learns to navigate the environment, reaching high scores reliably after ~X episodes.
 
+### 📈 Episode Length
+![Episode Length](saves/episode_length_curve.png)
+
+### 📈 Reward Curve
+![Reward Curve](saves/reward_curve_lowgv.png)
+
+
 ### 🤖 AI vs Human Scores
-- Best AI Score: `XXXX`
-- Best Human Score: `YYYY`
-- *(Insert leaderboard screenshot or table)*
+- Best AI Score: `3500`
+- Best Human Score: `2000`
+![leaderboard](assets/leaderboard.png)
 
 ---
 
@@ -71,16 +78,19 @@ pip install -r requirements.txt
 ```
 
 ### 🕹️ Play as Human
-python -m scripts.play_human
+```bash
+python3 -m scripts.play_human
+```
 
 ### 🤖 Train Agent
-python scripts/train.py
-
+Hyperparameters can be adjusted within the file.
+```bash
+python3 -m scripts.train
+```
 ### 🧪 Evaluate Trained Agent
-python scripts/evaluate.py
-
-### 📊 Generate Plots
-python scripts/plot_rewards.py
+```bash
+python3 -m scripts.evaluate
+```
 
 ### 📂 Project Structure
 
@@ -91,3 +101,10 @@ jetpack_rl/
 ├── saves/                 # Trained models, leaderboard, plots
 ├── logs/                  # Training logs and Monitor outputs
 
+### 🚀 Next Steps
+
+- Understand what is causing the best AI runs by creating a replay system of best performances.
+
+- Create more robust reward systems to incentivize desired behavior.
+
+- Test different RL Algorithms (A2C, DQN, etc.).

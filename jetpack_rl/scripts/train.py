@@ -65,7 +65,7 @@ def plot_reward_curve(log_file, save_path):
     plt.xlabel("Episode")
     plt.ylabel("Reward")
     plt.title("Reward Curve")
-    plt.savefig(os.path.join(save_path, "reward_curve.png"))
+    plt.savefig(os.path.join(save_path, "reward_curve_lowgv_stablereward.png"))
     plt.close()
 
 def plot_average_reward(log_file, save_path):
@@ -79,7 +79,7 @@ def plot_average_reward(log_file, save_path):
     plt.xlabel("Episode")
     plt.ylabel("Average Reward (10-episode MA)")
     plt.title("Average Reward per Episode Over Time")
-    plt.savefig(os.path.join(save_path, "average_reward.png"))
+    plt.savefig(os.path.join(save_path, "average_reward_lowgv_stablereward.png"))
     plt.close()
 
 def plot_loss_curve(training_logs_file, save_path):
@@ -94,7 +94,7 @@ def plot_loss_curve(training_logs_file, save_path):
     plt.xlabel("Timesteps")
     plt.ylabel("Combined Loss")
     plt.title("Loss Curve")
-    plt.savefig(os.path.join(save_path, "loss_curve.png"))
+    plt.savefig(os.path.join(save_path, "loss_curve_lowgv_stablereward.png"))
     plt.close()
 
 def plot_entropy_curve(training_logs_file, save_path):
@@ -109,7 +109,7 @@ def plot_entropy_curve(training_logs_file, save_path):
     plt.xlabel("Timesteps")
     plt.ylabel("Policy Entropy")
     plt.title("Policy Entropy Curve")
-    plt.savefig(os.path.join(save_path, "entropy_curve.png"))
+    plt.savefig(os.path.join(save_path, "entropy_curve_lowgv_stablereward.png"))
     plt.close()
 
 def plot_episode_length_curve(training_logs_file, save_path):
@@ -124,7 +124,7 @@ def plot_episode_length_curve(training_logs_file, save_path):
     plt.xlabel("Timesteps")
     plt.ylabel("Average Episode Length")
     plt.title("Episode Length Over Time")
-    plt.savefig(os.path.join(save_path, "episode_length_curve.png"))
+    plt.savefig(os.path.join(save_path, "episode_length_curve_lowgv_stablereward.png"))
     plt.close()
 
 def main():
@@ -144,11 +144,11 @@ def main():
     logging_callback = LoggingCallback()
     
     # Set total timesteps for training.
-    total_timesteps = 5000000  # Adjust as needed.
+    total_timesteps = 2000000  # Adjust as needed.
     model.learn(total_timesteps=total_timesteps, callback=logging_callback)
     
     # Save the trained model.
-    model.save("saves/models/ppo_model_5mil")
+    model.save("saves/models/ppo_model_2mil_lowgv_stablereward")
     
     # Plot and save training graphs.
     plot_reward_curve("logs/monitor.csv", "saves/plots")
